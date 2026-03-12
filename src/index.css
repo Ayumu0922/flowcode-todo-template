@@ -1,122 +1,61 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@import "tailwindcss";
+
+@theme {
+  --color-background: oklch(0.985 0.002 247);
+  --color-foreground: oklch(0.15 0.01 265);
+  --color-card: oklch(1 0 0);
+  --color-card-foreground: oklch(0.15 0.01 265);
+  --color-popover: oklch(1 0 0);
+  --color-popover-foreground: oklch(0.15 0.01 265);
+  --color-primary: oklch(0.6 0.2 265);
+  --color-primary-foreground: oklch(0.985 0 0);
+  --color-secondary: oklch(0.96 0.005 265);
+  --color-secondary-foreground: oklch(0.15 0.01 265);
+  --color-muted: oklch(0.96 0.005 265);
+  --color-muted-foreground: oklch(0.5 0.01 265);
+  --color-accent: oklch(0.96 0.005 265);
+  --color-accent-foreground: oklch(0.15 0.01 265);
+  --color-destructive: oklch(0.6 0.2 25);
+  --color-destructive-foreground: oklch(0.985 0 0);
+  --color-border: oklch(0.92 0.005 265);
+  --color-input: oklch(0.92 0.005 265);
+  --color-ring: oklch(0.6 0.2 265);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius: 0.75rem;
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
 }
 
-.container {
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-  padding: 32px;
-  width: 100%;
-  max-width: 480px;
-}
-
-h1 {
-  color: #333;
-  font-size: 28px;
-  margin-bottom: 24px;
-  text-align: center;
-}
-
-.input-group {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 24px;
-}
-
-.input-group input {
-  flex: 1;
-  padding: 12px 16px;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: border-color 0.2s;
-}
-
-.input-group input:focus {
-  outline: none;
-  border-color: #667eea;
-}
-
-.input-group button {
-  padding: 12px 24px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.input-group button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-}
-
-.todo-list {
-  list-style: none;
-}
-
-.todo-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 16px;
-  background: #f8f9fa;
-  border-radius: 8px;
-  margin-bottom: 8px;
-  transition: transform 0.2s;
-}
-
-.todo-item:hover {
-  transform: translateX(4px);
-}
-
-.todo-item.completed span {
-  text-decoration: line-through;
-  color: #999;
-}
-
-.todo-item input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-}
-
-.todo-item span {
-  flex: 1;
-  font-size: 16px;
-}
-
-.todo-item button {
-  padding: 8px 12px;
-  background: #ff6b6b;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.todo-item button:hover {
-  background: #ee5a5a;
-}
-
-.empty-state {
-  text-align: center;
-  color: #999;
-  padding: 32px;
+.dark {
+  --color-background: oklch(0.12 0.01 265);
+  --color-foreground: oklch(0.95 0 0);
+  --color-card: oklch(0.17 0.01 265);
+  --color-card-foreground: oklch(0.95 0 0);
+  --color-popover: oklch(0.17 0.01 265);
+  --color-popover-foreground: oklch(0.95 0 0);
+  --color-primary: oklch(0.7 0.2 265);
+  --color-primary-foreground: oklch(0.12 0.01 265);
+  --color-secondary: oklch(0.22 0.01 265);
+  --color-secondary-foreground: oklch(0.95 0 0);
+  --color-muted: oklch(0.22 0.01 265);
+  --color-muted-foreground: oklch(0.65 0 0);
+  --color-accent: oklch(0.22 0.01 265);
+  --color-accent-foreground: oklch(0.95 0 0);
+  --color-destructive: oklch(0.55 0.2 25);
+  --color-destructive-foreground: oklch(0.95 0 0);
+  --color-border: oklch(0.27 0.01 265);
+  --color-input: oklch(0.27 0.01 265);
+  --color-ring: oklch(0.7 0.2 265);
 }
